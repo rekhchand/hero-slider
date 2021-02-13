@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+:root {
+  --red: #ff6263;
+  --blue: #0ebec7;
+  --white: #ffffff;
+  --black: #111111;
+  --dark-gray: #444444;
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  font-weight: normal;
+  font-size: 1.6rem;
+  color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 7.2rem;
+  font-weight: normal;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-block;
+  height: 6.4rem;
+  min-width: 24rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 10rem;
+}
+button:hover {
+  background-color: #0baab3;
+}
+button.small {
+  height: 4.8rem;
+  min-width: 14rem;
+  text-transform: initial;
+  letter-spacing: initial;
+}
+button.red {
+  background-color: var(--red);
+}
+button.red:hover {
+  background-color: #f04d4d;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.reveal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  z-index: 20;
+  background-color: var(--red);
+}
+
+header {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+header .navbar {
+  height: 12rem;
+  position: relative;
+  z-index: 10;
+}
+header .navbar .wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+header .navbar .logo {
+  margin-right: 3rem;
+}
+header .navbar .logo img {
+  height: 4rem;
+}
+header .navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+}
+header .navbar ul li {
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.2s;
+  margin-left: 3rem;
+  cursor: pointer;
+}
+header .navbar ul li img {
+  height: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+header .navbar button {
+  margin-left: auto;
+}
+header .navbar .loading {
+  position: absolute;
+  bottom: -0.5px;
+  left: 0;
+  z-index: 10;
+  height: 1px;
+  width: 0;
+  background-color: #ffffff;
+}
+header .hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+}
+header .hero .wrapper {
+  height: 100%;
+  position: relative;
+}
+header .hero .main-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+header .hero .main-content h1 .line {
+  height: 8rem;
+  overflow: hidden;
+}
+header .hero .main-content button {
+  margin-top: 3rem;
+}
+header .hero .video {
+  position: absolute;
+  bottom: 4rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+header .hero .video p {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-right: 2rem;
+}
+header .hero .video img {
+  height: 4.8rem;
+  transition: transform 0.2s;
+}
+header .hero .video:hover img {
+  transform: scale(1.1);
+}
+header .hero .slider-dots {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+header .hero .slider-dots span {
+  height: 1rem;
+  width: 1rem;
+  background-color: #ffffff;
+  border-radius: 10rem;
+  position: relative;
+  cursor: pointer;
+  margin-top: 3.6rem;
+}
+header .hero .slider-dots span:first-child {
+  margin-top: 0;
+}
+header .hero .slider-dots span::before {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10rem;
+  z-index: -1;
+  transition: 0.3s;
+}
+header .hero .slider-dots span:hover::before {
+  height: 3rem;
+  width: 3rem;
+}
+header .hero .slider-dots span.current {
+  cursor: initial;
+}
+header .hero .slider-dots span.current::before {
+  height: 3rem;
+  width: 3rem;
+}
+header .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+header .slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: url(/img-1.39f42be1.jpg) no-repeat center;
+  background-size: cover;
+}
+header .slider .slide.current {
+  z-index: 2;
+}
+header .slider .slide.previous {
+  z-index: 1;
+}
+header .slider .slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+}
+header .slider .slide.slide-1 {
+  background: url(/img-1.39f42be1.jpg) no-repeat center;
+  background-size: cover;
+}
+header .slider .slide.slide-2 {
+  background: url(/img-2.6169cf42.jpg) no-repeat center;
+  background-size: cover;
+}
+header .slider .slide.slide-3 {
+  background: url(/img-3.1688b5db.jpg) no-repeat center;
+  background-size: cover;
+}
+header .slider .slide .wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+header .slider .slide .slide-content {
+  position: absolute;
+  bottom: 5rem;
+  right: 0;
+  z-index: 5;
+  max-width: 400px;
+  padding-left: 3rem;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+header .slider .slide .slide-content .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 5px;
+  background-color: var(--red);
+}
+
+@media (max-height: 660px), (max-width: 840px) {
+  html {
+    font-size: 50%;
+  }
+
+  header .navbar {
+    height: 10rem;
+  }
+}
+
+/*# sourceMappingURL=/style.97fcb138.css.map */

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="48" viewBox="0 0 96 48">
+  <g id="Group_32" data-name="Group 32" transform="translate(-588 -569)">
+    <g id="Rectangle_32" data-name="Rectangle 32" transform="translate(588 569)" fill="rgba(255,255,255,0.2)" stroke="#fff" stroke-width="1">
+      <rect width="96" height="48" rx="24" stroke="none"/>
+      <rect x="0.5" y="0.5" width="95" height="47" rx="23.5" fill="none"/>
+    </g>
+    <path id="Polygon_3" data-name="Polygon 3" d="M6,0l6,10H0Z" transform="translate(641 587) rotate(90)" fill="#fff"/>
+  </g>
+</svg>
